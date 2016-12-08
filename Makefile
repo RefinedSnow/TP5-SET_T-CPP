@@ -10,12 +10,15 @@ INCDIR   = include
 CFLAGS   = -W -Wall -I. -I$(INCDIR) 
 LFLAGS   = -W -Wall -I. -I$(INCDIR) -lm
 
-all: $(BINDIR)/carre $(BINDIR)/setint 
+all: $(BINDIR)/carre $(BINDIR)/setint $(BINDIR)/sett
 
 $(BINDIR)/carre: $(OBJDIR)/carre.o
 	$(CC) $(LFLAGS) $^ -o $@
 
 $(BINDIR)/setint: $(OBJDIR)/main.o $(OBJDIR)/setint.o
+	$(CC) $(LFLAGS) $^ -o $@
+
+$(BINDIR)/sett: $(OBJDIR)/main_template.o
 	$(CC) $(LFLAGS) $^ -o $@
 
 $(OBJDIR)/%.o: $(SRCDIR)/%.cpp

@@ -14,6 +14,9 @@ set_int::set_int(const set_int& set) :set_int(set.taille){
 	cout << "copy" << endl;
 }
 set_int& set_int::operator=(const set_int& set){
+	if(this == &set){
+		return (*this);
+	}
 	if(taille != set.taille){
 		delete[] elements;
 		nbelements = set.nbelements;
