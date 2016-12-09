@@ -20,7 +20,7 @@ int main(){
 	cout <<"taille : " << affect.getTaille()<<endl;
 	cout <<"nbelements : " << affect.cardinal()<<endl;
 	
-	/*
+	
 	myset + 1;
 	cout << "add ok" << endl;
 	cout <<"taille : " << myset.getTaille()<<endl;
@@ -41,6 +41,5 @@ int main(){
 	cout << 6%myset << endl;
 	myset + 6;
 	cout << myset;
-	*/
 	return 0;
 }

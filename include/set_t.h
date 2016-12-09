@@ -20,10 +20,58 @@ template<typename T> class set_T{
 	int getTaille();
 	T operator[](int numElement);
 
-	/*friend set_T operator+(set_T& ensemble, T n);
-	friend set_T operator-(set_T& ensemble, T n);
-	friend int operator%(T n, const set_T& ensemble);
-	friend ostream& operator<<(ostream& strm, const set_T& ensemble);*/
+	friend set_T operator+(set_T& ensemble, T n){
+		if(ensemble.nbelements < ensemble.taille){
+		ensemble.elements[ensemble.nbelements] = n;
+		ensemble.nbelements++;
+	}
+	return ensemble;
+	}
+	friend set_T operator-(set_T& ensemble, T n){
+		int j = 0;
+		bool exist = false;
+		for(int i = 0; i < ensemble.nbelements; i++)
+		{
+			if(ensemble.elements[i] == n){
+				j=i;
+				exist = true;
+			}
+		}
+		if(exist && j!=0){
+			for(int k = j ;k<ensemble.nbelements;k++){
+				ensemble.elements[k] = ensemble.elements[k+1];
+			}
+		}
+		if(!exist){
+			throw "Element not found";
+		}
+		ensemble.nbelements--;
+		return ensemble;
+	}
+	friend int operator%(T n, const set_T& ensemble){
+		int exist = 0;
+		for(int i = 0; i < ensemble.nbelements; i++)
+		{
+			if(ensemble.elements[i] == n){
+				exist = 1;
+			}
+		}
+		return exist;
+	}
+	friend ostream& operator<<(ostream& strm, const set_T& ensemble){
+		strm << "[";
+		for(int i = 0; i < ensemble.nbelements; i++)
+		{
+			if(i != ensemble.nbelements -1){
+				strm << ensemble.elements[i] << ", ";
+			}
+			else{
+				strm << ensemble.elements[i];
+			}
+		}
+		strm << "]";
+		return strm << endl;
+	}
 };
 
 template<typename T>
