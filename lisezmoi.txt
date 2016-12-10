@@ -8,3 +8,8 @@ Il suffit de déclarer la fonction template dans la classe Machin,
 cependant il faudra définir celle-ci dans le header et non le cpp.
 Il n'est pas nécessaire de définir la fonction dans le corps de la classe.
 
+II:
+Il n'y a pas de réelle difficulté pour la suite. Une fois la classe set_int réalisée, la passer en template est relativement simple.
+Il ne faut pas oublier les template<typename T> et les set_T<T>.
+La déclaration des fonctions se font dans la classe, la définition dans le .h de la classe.
+Et la subtilité est la déclaration et définition des fonctions amies dans le corps de la classe.
