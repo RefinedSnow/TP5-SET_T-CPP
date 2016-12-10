@@ -1,0 +1,10 @@
+
+I-3 :
+On veut appliquer sans aucune modification le patron de fonction de la question I-2/ à une
+classe Machin définie par l’utilisateur. Quelles caractéristiques doit posséder la classe Machin ? Y at-il
+lieu de surcharger certaines fonctions ? Si oui, lesquelles. 
+
+Il suffit de déclarer la fonction template dans la classe Machin,
+cependant il faudra définir celle-ci dans le header et non le cpp.
+Il n'est pas nécessaire de définir la fonction dans le corps de la classe.
+
